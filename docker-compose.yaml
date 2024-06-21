@@ -1,0 +1,13 @@
+services:
+
+  db:
+    image: postgres
+    restart: always
+    env_file:
+      - .env.docker
+    volumes:
+      - ./pg-data:/var/lib/postgresql/data
+    ports:
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
+volumes:
+  dbdata:
